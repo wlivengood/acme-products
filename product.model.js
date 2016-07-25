@@ -32,9 +32,9 @@ module.exports = {
 		products.push(newProduct);
 	},
 	editProduct(id, name) {
-		console.log("here");
-		this.getProducts().filter(function(item) {
+		var toEdit = this.getProducts().filter(function(item) {
 			return item.id === id;
-		})[0].name = name;
+		})[0];
+		toEdit.name = name;
 	}
 }
