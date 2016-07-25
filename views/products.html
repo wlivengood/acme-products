@@ -1,0 +1,27 @@
+{% extends './layout.html' %}
+{% block main %}
+<h2>Products Here</h2>
+<br/>
+<form method='GET' action='/products/add'>
+<button class = 'btn btn-primary'>Add Product</button>
+</form>
+	{% if !products.length %}
+	<div class='well'>
+		No products to show
+	</div>
+	{% endif %}
+	<ul class='list-group'>
+		{% for item in products %}
+			<li class='list-group-item'>
+				{{item.name}}
+				<br/>
+				<form method='POST' action='/products/{{item.id}}?method=DELETE'>
+				<button class = 'btn btn-danger'>Delete</button>
+				</form>
+				<form method='GET' action='/products/{{item.id}}/edit'>
+				<button class = 'btn btn-warning'>Edit</button>
+				</form>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

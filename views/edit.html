@@ -1,0 +1,8 @@
+{% extends './layout.html' %}
+{% block main %}
+  <form action="/products/{{item.id}}/edit/{{item.name}}?method=PUT" method="POST">
+    <label for="name_field">Edit Product:</label>
+    <input name="name" value = "Edit Product" type="text" id="name_field"/>
+    <input type="submit" value="Submit" />
+ </form>
+{% endblock %}

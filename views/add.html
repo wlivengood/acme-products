@@ -1,0 +1,8 @@
+{% extends './layout.html' %}
+{% block main %}
+  <form action="/products/add" method="POST">
+    <label for="name_field">New Product:</label>
+    <input name="name" value = "Add Product" type="text" id="name_field"/>
+    <input type="submit" value="Submit" />
+ </form>
+{% endblock %}
